@@ -44,7 +44,9 @@ public class Basics {
         JsonPath js1 = ReusableMethods.rawToJson(getPlaceResponse);
 
         String actualAddress = js1.getString("address");
+        String locations = js1.getString("location.latitude");
         System.out.println(actualAddress);
         Assert.assertEquals(actualAddress, newAddress);
+        Assert.assertEquals(locations, "-38.383494");
     }
 }
